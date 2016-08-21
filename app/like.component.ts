@@ -17,9 +17,7 @@ import {Component, Input, Output, EventEmitter} from 'angular2/core';
 export class LikeComponent { 
   
   @Input('like-selected') likeSelected : boolean = false;
-  @Input('likes-counter') likesCounter;
-
-  @Output() change = new EventEmitter();
+  @Input('likes-counter') likesCounter = 0;
 
   onHeartIconClicked() {
     this.likeSelected = !this.likeSelected;

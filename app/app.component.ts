@@ -3,6 +3,7 @@ import {CoursesComponent} from './courses.component';
 import {AuthorsComponent} from './authors.component';
 import {StarComponent} from './star.component';
 import {LikeComponent} from './like.component';
+import {VotingComponent} from './voting.component';
 
 @Component({
   selector: 'my-app',
@@ -17,8 +18,11 @@ import {LikeComponent} from './like.component';
     <like-icon [likesCounter]="post.likesCounter" [likeSelected]="post.likeSelected">
     </like-icon>
 
+    <voter>
+    </voter>
+
     `,
-  directives: [CoursesComponent, AuthorsComponent, StarComponent, LikeComponent]
+  directives: [CoursesComponent, AuthorsComponent, StarComponent, LikeComponent, VotingComponent]
 })
 export class AppComponent { 
   title = "Angular App";
