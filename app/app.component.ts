@@ -33,7 +33,8 @@ import {SummaryPipe} from './summary.pipe';
     </div>
 
     <div>
-      {{ post.title }}
+      <span>{{ post.title }}</span>
+      <span> - assigned to: {{ post.asignee?.name }}</span>
       <br />
       {{ post.body | summary: 20 }}
     </div>
@@ -45,13 +46,14 @@ export class AppComponent {
   title = "Angular App";
 
   post = {
-    title: "Title",
+    title: "Task to complete",
     isFavorite: true,
     likeSelected: false,
     likesCounter: 10,
     body: `
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    `
+    `,
+    asignee: null
   }
 
   onFavoriteChanged(event) {
