@@ -8,6 +8,12 @@ import {AutoGrowDirective} from './auto-grow.directive'
     <h2>Courses</h2>
     {{ title }}
     <input type="text" autoGrow>
+    <div *ngIf="courses.length > 0">
+      List of courses:
+    </div>
+    <div [hidden]="courses.length > 0">
+      You don't have any courses
+    </div>
     <ul>
       <li *ngFor="#course of courses">
         {{course}}
@@ -19,7 +25,7 @@ import {AutoGrowDirective} from './auto-grow.directive'
 })
 export class CoursesComponent { 
   title: string = "The title of courses page";
-  courses: string[];
+  courses: string[] = [];
 
   constructor(courseService: CourseService) {
     this.courses = courseService.getCourses();
