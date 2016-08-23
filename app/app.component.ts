@@ -4,6 +4,7 @@ import {AuthorsComponent} from './authors.component';
 import {StarComponent} from './star.component';
 import {LikeComponent} from './like.component';
 import {VotingComponent} from './voting.component';
+import {SummaryPipe} from './summary.pipe';
 
 @Component({
   selector: 'my-app',
@@ -30,7 +31,14 @@ import {VotingComponent} from './voting.component';
       <template [ngSwitchWhen]="'map'" ngSwitchDefault>MapView Content</template>
       <template [ngSwitchWhen]="'list'">ListView Content</template>
     </div>
+
+    <div>
+      {{ post.title }}
+      <br />
+      {{ post.body | summary: 20 }}
+    </div>
     `,
+  pipes: [SummaryPipe],
   directives: [CoursesComponent, AuthorsComponent, StarComponent, LikeComponent, VotingComponent]
 })
 export class AppComponent { 
@@ -40,7 +48,10 @@ export class AppComponent {
     title: "Title",
     isFavorite: true,
     likeSelected: false,
-    likesCounter: 10
+    likesCounter: 10,
+    body: `
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    `
   }
 
   onFavoriteChanged(event) {

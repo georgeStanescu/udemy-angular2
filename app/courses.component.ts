@@ -6,17 +6,17 @@ import {AutoGrowDirective} from './auto-grow.directive'
   selector: 'courses',
   template: `
     <h2>Courses</h2>
-    {{ title }}
+    {{ title | uppercase | lowercase }}
     <input type="text" autoGrow>
     <div *ngIf="courses.length > 0">
-      List of courses:
+      List of courses(total - {{courses.length || number }}):
     </div>
     <div [hidden]="courses.length > 0">
       You don't have any courses
     </div>
     <ul>
       <li *ngFor="#course of courses">
-        {{course}}
+        {{course | json }}
       </li>
     </ul>
     `,
