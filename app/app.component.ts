@@ -5,6 +5,7 @@ import {StarComponent} from './star.component';
 import {LikeComponent} from './like.component';
 import {VotingComponent} from './voting.component';
 import {SummaryPipe} from './summary.pipe';
+import {BootstrapPanel} from './bootstrapPanel.component';
 
 @Component({
   selector: 'my-app',
@@ -38,9 +39,15 @@ import {SummaryPipe} from './summary.pipe';
       <br />
       {{ post.body | summary: 20 }}
     </div>
+
+    <bs-panel>
+      <div class="heading">This is the content to render in the heading section.</div>
+      <div class="body">This is the content to render in the body section.</div>
+      <div class="body">This is another content to render in the body section.</div>
+    </bs-panel>
     `,
   pipes: [SummaryPipe],
-  directives: [CoursesComponent, AuthorsComponent, StarComponent, LikeComponent, VotingComponent]
+  directives: [CoursesComponent, AuthorsComponent, StarComponent, LikeComponent, VotingComponent, BootstrapPanel]
 })
 export class AppComponent { 
   title = "Angular App";
