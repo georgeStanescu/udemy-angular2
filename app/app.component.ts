@@ -8,6 +8,7 @@ import {SummaryPipe} from './summary.pipe';
 import {BootstrapPanel} from './bootstrapPanel.component';
 import {ZippyComponent} from './zippy.component';
 import {ContactFormComponent} from './contactForm.component';
+import {EmailSubscriptionComponent} from './emailSubscription.component';
 
 @Component({
   selector: 'my-app',
@@ -54,9 +55,12 @@ import {ContactFormComponent} from './contactForm.component';
 
     <contact-form>
     </contact-form>
+
+    <email-subscription>
+    </email-subscription>
     `,
   pipes: [SummaryPipe],
-  directives: [CoursesComponent, AuthorsComponent, StarComponent, LikeComponent, VotingComponent, BootstrapPanel, ZippyComponent, ContactFormComponent]
+  directives: [CoursesComponent, AuthorsComponent, StarComponent, LikeComponent, VotingComponent, BootstrapPanel, ZippyComponent, ContactFormComponent, EmailSubscriptionComponent]
 })
 export class AppComponent { 
   title = "Angular App";
