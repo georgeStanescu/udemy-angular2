@@ -17,6 +17,12 @@ export class SignupComponent {
   }
 
   signup() {
+    //calling a service (eg authentication service)
+    
+    this.form.find('username').setErrors({
+      invalidLogin: true
+    });
+
     console.log(this.form.value);
   }
 }
