@@ -9,6 +9,7 @@ import {BootstrapPanel} from './bootstrapPanel.component';
 import {ZippyComponent} from './zippy.component';
 import {ContactFormComponent} from './contactForm.component';
 import {EmailSubscriptionComponent} from './emailSubscription.component';
+import {SignupComponent} from './signup.component';
 
 @Component({
   selector: 'my-app',
@@ -58,9 +59,12 @@ import {EmailSubscriptionComponent} from './emailSubscription.component';
 
     <email-subscription>
     </email-subscription>
+
+    <signup>
+    </signup>
     `,
   pipes: [SummaryPipe],
-  directives: [CoursesComponent, AuthorsComponent, StarComponent, LikeComponent, VotingComponent, BootstrapPanel, ZippyComponent, ContactFormComponent, EmailSubscriptionComponent]
+  directives: [CoursesComponent, AuthorsComponent, StarComponent, LikeComponent, VotingComponent, BootstrapPanel, ZippyComponent, ContactFormComponent, EmailSubscriptionComponent, SignupComponent]
 })
 export class AppComponent { 
   title = "Angular App";
