@@ -7,6 +7,7 @@ import {VotingComponent} from './voting.component';
 import {SummaryPipe} from './summary.pipe';
 import {BootstrapPanel} from './bootstrapPanel.component';
 import {ZippyComponent} from './zippy.component';
+import {ContactFormComponent} from './contactForm.component';
 
 @Component({
   selector: 'my-app',
@@ -50,9 +51,12 @@ import {ZippyComponent} from './zippy.component';
     <zippy title="Who can see my stuff?">
       <div>Here's who can see your stuff</div>
     </zippy>
+
+    <contact-form>
+    </contact-form>
     `,
   pipes: [SummaryPipe],
-  directives: [CoursesComponent, AuthorsComponent, StarComponent, LikeComponent, VotingComponent, BootstrapPanel, ZippyComponent]
+  directives: [CoursesComponent, AuthorsComponent, StarComponent, LikeComponent, VotingComponent, BootstrapPanel, ZippyComponent, ContactFormComponent]
 })
 export class AppComponent { 
   title = "Angular App";
