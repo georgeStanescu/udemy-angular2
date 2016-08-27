@@ -6,6 +6,7 @@ import {LikeComponent} from './like.component';
 import {VotingComponent} from './voting.component';
 import {SummaryPipe} from './summary.pipe';
 import {BootstrapPanel} from './bootstrapPanel.component';
+import {ZippyComponent} from './zippy.component';
 
 @Component({
   selector: 'my-app',
@@ -45,9 +46,13 @@ import {BootstrapPanel} from './bootstrapPanel.component';
       <div class="body">This is the content to render in the body section.</div>
       <div class="body">This is another content to render in the body section.</div>
     </bs-panel>
+
+    <zippy title="Who can see my stuff?">
+      <div>Here's who can see your stuff</div>
+    </zippy>
     `,
   pipes: [SummaryPipe],
-  directives: [CoursesComponent, AuthorsComponent, StarComponent, LikeComponent, VotingComponent, BootstrapPanel]
+  directives: [CoursesComponent, AuthorsComponent, StarComponent, LikeComponent, VotingComponent, BootstrapPanel, ZippyComponent]
 })
 export class AppComponent { 
   title = "Angular App";
